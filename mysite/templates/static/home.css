@@ -1,0 +1,333 @@
+*{
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+:root{
+  --primary: #3a3e3a;
+  --secondary : #73777b;
+  --icons : #ec994b;
+  --text_color : #3a3e3a;
+  --background_color: #f1eee9;
+}
+body{
+  margin: 8px;
+  z-index: 0;
+  color: var(--text_color);
+  background-color: var(--background_color);
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+#navigation{
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky !important;
+  top: 0;
+  z-index: 1;
+  margin: 12px auto;
+  padding: 2px;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  transition: .8s ease-in;
+}
+#navigation a{
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--background_color);
+}
+#navigation a:hover{
+  color: var(--secondary);
+  background-color: var(--background_color);
+  border-radius: 4px;
+}
+#nav-icon-container{
+  display: flex;
+  justify-content: flex-end;
+}
+#nav-icon-container a{
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+}
+.nav-icon-menu{
+  color: black;
+  text-decoration: none;
+}
+#hero-img{
+  display: block;
+  width: 100%;
+  border-bottom: 4px solid #3a3e59;
+}
+#hero-img .hero-l{
+  width: 100%;
+}
+#login-form-container{
+      display: block;
+      width: 40%;
+      z-index: 2;
+      position: fixed;
+      top: 25%;
+      left: 30%;
+      padding: 16px;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 0 10px 5px #000000a2;
+      background-color: #00000070;
+      backdrop-filter: blur(2px);
+      transform: scale(0);
+      transition: .4s ease-out .4s;
+    }
+.login-form-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--background_color);
+}
+.close-login{
+  display: block;
+  margin-right: 16px;
+  text-decoration: none;
+  padding: 8px;
+  color: var(--background_color) !important;
+}
+.login-formclass label, .login-formclass input, #loginbtn{
+  display: block;
+  width: 100%;
+  margin: 14px auto;
+  font-size: 18px;
+  color: var(--background_color);
+}
+input[type=email], input[type=password], input[type=text], input[type=tel], button[type=submit]{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  color: var(--background_color);
+  background-color: #00000000;
+  /* border: 2px solid var(--secondary); */
+  border: none;
+  border-radius: 8px;
+}
+#login-email-input, #login-password-input{
+  color: var(--secondary);
+  background-color: var(--background_color);
+  border-bottom: 2px solid var(--background_color);
+  border-radius: 0;
+}
+
+input:focus{
+  outline: none;
+}
+
+button[type=submit]{
+  border: none;
+  background-color: var(--icons);
+}
+#features{
+  display: flex;
+  width: 90%;
+  margin: 50px auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 14px;
+  text-align: center;
+}
+#features .feat{
+  display: flex;
+  width: 90%;
+  margin: 20px;
+  flex-direction: column;
+}
+#features .feat i{
+  font-size: 3rem;
+  color: var(--icons);
+}
+#features .feat p{
+  font-size: 1rem;
+  
+}
+#doctor-cards-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: 20px auto;
+}
+#doctor-cards-container .doctor-card{
+
+  display:  flex;
+  /* width: 70%; */
+  margin: 28px auto;
+  padding: 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 8px #cfcfcf92;
+}
+.doctor-card img{
+  display: block;
+  width: 100%;
+}
+.doctor-card .doctor-desc{
+  font-size: 1rem;
+  padding: 8px;
+  border-left: 1px solid var(--primary_color);
+}
+#department{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.department{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 40%;
+  height: 250px;
+  margin: 24px auto;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 4px #00000024;
+
+}
+.department p{
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 4px 12px;
+  color: white;
+  background-color: #0000009a;
+  border-radius: 0 0 8px 8px;
+}
+.cardiology{
+  background-image: url('cardiac.jpeg');
+}
+.Anasthesiology{
+  background-image: url('anasthesio.jpeg');
+}
+.Gynaecology{
+  background-image: url('gynaec.jpeg');
+}
+.Pediactric{
+  background-image: url('pediatric.jpeg')
+}
+#appointment-container{
+  display: block;
+  width: 100%;
+  /* margin: 30px auto; */
+}
+#appointment-form{
+  display: block;
+  width: 90%;
+  margin: 28px auto;
+  padding: 14px;
+  border: 2px solid grey;
+  color: var(--secondary);
+}
+.appoint-text, .appoint-tel, .appoint-date-input, .appoint-time-input{
+  display: block;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 2px solid var(--secondary)!important;
+  border-radius: 8px;
+  color: var(--secondary) !important;
+  background-color: var(--background_color);
+}
+.appoint-date-input, .appoint-time-input{
+  display: inline;
+}
+
+
+  #menu{
+    display: block;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  transition: .4s linear;
+}
+  #menu > #crossdiv{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    font-size: 22px;
+  }
+    #crossdiv > .cross{
+      padding: 4px 16px;
+      font-size: 36px;
+      text-decoration: none;
+      color: #404756;
+    }
+    #menu > ul{
+      list-style-type: none;
+      padding: 0;
+    }
+    #menu > ul > li{
+      margin: 8px;
+      font-size: 18px;
+    }
+    #menu > ul > li > a{
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #404756;
+      background-color: var(--background_color);
+    }
+
+#footer{
+  padding: 1px;
+  text-align: center;
+  color: var(--background_color);
+  background-color: var(--secondary);
+}
+
+
+@media screen and (min-width:576px){
+ 
+  #navigation{
+    display: flex;
+    
+  }
+  #features .feat{
+    width: 25%;
+    margin: 28px;
+  } 
+  .doctor-card img{
+    width: 200px;
+  }
+  #doctor-cards-container .doctor-card{
+    
+    margin: 28px;
+  }
+  .nav-icon-menu{
+    display: none;
+  }
+  #appointment-container{
+    width: 70%;
+    margin: 28px auto;
+  }
+  #appointment-form{
+    width: 100%;
+    margin: 28px auto;
+  }
+}
+@media screen and (min-width:769px){
+  /* .doctor-card img{
+    width: 50px;
+  } */
+  /* #doctor-cards-container .doctor-card{
+    width: 25%;
+    margin: 28px;
+  } */
+  #navigation{
+    display: flex;
+  }
+  #appointment-container{
+    width: 40%;
+    margin: 40px auto;
+  }
+}

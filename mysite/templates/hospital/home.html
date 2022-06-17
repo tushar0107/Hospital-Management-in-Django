@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
+
+    <link rel="stylesheet" href="{% static 'home.css' %}" type="text/css" media="all" />
+    <title>home</title>
+ 
+  </head>
+  <body>
+    
+    <div id="heading">
+      <h1>Hospital Name</h1>
+    </div>
+
+    <div id="navigation">
+      <a href="#">Departments</a>
+      <a href="#">Medical Services</a>
+      <a href="#appointment-container">Book Appointment</a>
+      <a href="javascript:void(0)" onclick="loginOpen()">Login</a>
+      <a href="staff_admin">Admin</a>
+      <a href="#">About Us</a>
+    </div>
+    <div id="nav-icon-container">
+      <a class="nav-icon-menu fa fa-bars" href="javascript:void(0)" onclick="menuOpen()">  Menu</a>
+    </div>
+      
+    <div id="hero-img">
+      <img class="hero-l" src="{% static 'hero.jpeg' %}" alt="" />
+    </div>
+      
+    <div id="login-form-container">
+      <div class="login-form-head">
+        <h2>Login</h2>
+        <a class="close-login fa fa-times" href="javascript:void(0)" onclick="loginClose()"></a>
+      </div>
+      <form class="login-formclass" action="doctor_login" method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        <label for="username">Enter Username</label>
+        <input type="text" name="username" id="login-email-input" value="nitin" placeholder="Username" required/>
+        
+        <label for="password">Enter Password</label>
+        <input type="password" name="password" id="login-password-input" value="Nitin@1234" placeholder="Password.." required/>
+        
+        {% for message in messages %}
+        
+        {{message}}
+
+        {% endfor %}
+
+        <button type="submit" id="loginbtn">Login</button>
+        
+      </form>
+
+    </div>
+    
+    </div>
+    
+    
+    <div id="features">
+      <div class="feat">
+        <i class="fa fa-medkit"></i>
+        <p class="feat-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+      </div>
+      <div class="feat">
+        <i class="fa fa-ambulance"></i>
+        <p class="feat-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+      </div>
+      <div class="feat">
+        <i class="fa fa-user-md"></i>
+        <p class="feat-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+      </div>
+    </div>
+    
+    
+    <h2 style="text-align:center;">Our Specialists</h2>
+    <div id="doctor-cards-container">
+      <div class="doctor-card">
+        <div class="doctor-img">
+          <img src="{% static 'doc1.jpeg' %}" alt="" />
+          <p><strong>Dr. XXXXX XXXXXX</strong></p>
+          <p>specializations</p>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-img">
+          <img src="{% static 'doc2.jpeg' %}" alt="" />
+          <p><strong>Dr. XXXXX XXXXXX</strong></p>
+          <p>specializations</p>
+        </div>
+      </div>
+      
+      <div class="doctor-card">
+        <div class="doctor-img">
+          <img src="{% static 'doc3.jpeg' %}" alt="" />
+          <p><strong>Dr. XXXXX XXXXXX</strong></p>
+          <p>specializations</p>
+        </div>
+      </div>
+      
+      
+    </div>
+
+    <h2 style="text-align:center;">Our Departments</h2>
+    <div id="department">
+      <div class="department cardiology">
+        <p>Cardiology</p>
+      </div>
+      <div class="department Anasthesiology">
+        <p>Anasthesiology</p>
+      </div>
+      <div class="department Gynaecology">
+        <p>Gynaecology</p>
+      </div>
+      <div class="department Pediactric">
+        <p>Pediactric</p>
+      </div>
+    </div>
+
+    <div id="appointment-container">
+      <form id="appointment-form" action="appointment_booking" method="get">
+        <h3>Book an appointment here</h3>
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" class="appoint-text" placeholder="Enter First Name" required>
+          <br>
+        <label for="lname">Last name</label>
+        <input type="text" name="lname" class="appoint-text" placeholder="Enter Last Name" required>
+        <br>
+        <label for="mobile">Mobile</label>
+        <input type="tel" name="mobile" class="appoint-tel" placeholder="Enter your Mobile" required>
+          <br>
+        <label for="symptoms">Symptoms</label>
+        <input type="text" name="symptoms" class="appoint-text" placeholder="Enter Symptoms" >
+          <br>
+        <label for="date">Date</label>
+        <input type="date" name="date" class="appoint-date-input" placeholder="Date" required>
+        <label for="time">Time</label>
+        <input type="time" name="time" class="appoint-time-input" placeholder="Time" required>
+
+        <button type="submit">Register</button>
+
+      </form>
+    </div>
+    
+    <div id="menu">
+      <div id="crossdiv">
+        <span>Menu</span>
+        <a class="fa cross" href="javascript:void(0)" onclick="menuClose()">&times;</a>
+      </div>
+      
+      <ul>
+        <li><a class="fa login" href="javascript:void(0)" onclick="loginOpen()">&#xf090; Login</a></li>
+        <li><a class="fa building" href="#">&#xf1ad; Department</a></li>
+        <li><a class="fa plus-square" href="#">&#xf0fe; Medical Services</a></li>
+        <li><a class="fa phone" href="#">&#xf095; Contacts </a></li>
+        <li><a class="fa check" href="#">&#xf00a; Appointments</a></li>
+        <li><a class="fa user" href="staff_admin">&#xf007; Admin</a></li>
+        <li><a class="fa info-cirle" href="#">&#xf05a; AboutUs</a></li>
+      </ul>
+      <p style="text-align:center;">Developed by : Tushar Dasare</p>
+    </div>
+    
+    <div id="footer">
+      <p>
+
+        Mini Project by Group no. 18
+    </p>
+      </div>
+    
+    <script type="text/javascript" charset="utf-8">
+    function menuOpen(){
+      document.getElementById('menu').style.left="0";
+    }
+    function menuClose(){
+      document.getElementById('menu').style.left="100%";
+    }
+    function loginOpen(){
+      menuClose();
+      document.getElementById('login-form-container').style.transform = "scale(1)";
+      
+    }
+    function loginClose(){
+      document.getElementById('login-form-container').style.transform = "scale(0)";
+      
+    }
+    </script>
+  </body>
+</html>
