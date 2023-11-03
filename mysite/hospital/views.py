@@ -12,21 +12,21 @@ import requests
 
 
 def home(request):
-    return render(request,'hospital/home.html')
+    return render(request,'home.html')
 
 def register(request):
-    return render(request,'hospital/doctor_register.html')
+    return render(request,'doctor_register.html')
 
 def doctor_after_login(request):
     appointments = Appointment.objects.all()
     user = request.user
-    return render(request,'hospital/doctor_page.html', {'appointments':appointments,'user':user})
+    return render(request,'doctor_page.html', {'appointments':appointments,'user':user})
 
 
 def staff_admin(request):
     if request.user.is_authenticated:
         patients = Patient.objects.all()
-        return render(request, 'hospital/staff.html', {'patients':patients})
+        return render(request, 'staff.html', {'patients':patients})
     else:
         return redirect('home')
 
@@ -44,7 +44,7 @@ def doctor_login(request):
             messages.info(request,'Invalid credentials')
             return redirect('home')
     else:
-        return render(request,'hospital/home.html')
+        return render(request,'home.html')
 
 def doctor_register(request):
     if request.method == 'POST':
@@ -76,7 +76,7 @@ def doctor_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'hospital/home.html')
+        return render(request,'home.html')
 
 
 def staff_register(request):
@@ -110,7 +110,7 @@ def staff_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'hospital/home.html')
+        return render(request,'home.html')
 
 
 
@@ -129,13 +129,13 @@ def patient_register(request):
         
         if Patient.objects.filter(mobile=mobile).exists():
             messages.info(request,'Patient with this mobile number already exists')
-            return render(request,'hospital/doctor_page.html')
+            return render(request,'doctor_page.html')
         else:
             patient = Patient(doctor,fname,lname,mobile,address,symptoms,disease,file)
             messages.info(request,'Patient Registered Successfully!!')
             patient.save()
 
-        return render(request,'hospital/doctor_page.html')
+        return render(request,'doctor_page.html')
 
 
 def user_register(request):
@@ -163,7 +163,7 @@ def user_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'hospital/home.html')
+        return render(request,'home.html')
 
 def appointment_booking(request):
     if request.method == 'GET':
@@ -180,4 +180,4 @@ def appointment_booking(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request,'hospital/home.html')
+    return render(request,'home.html')

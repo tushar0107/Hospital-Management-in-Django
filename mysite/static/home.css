@@ -200,16 +200,16 @@ button[type=submit]{
   border-radius: 0 0 8px 8px;
 }
 .cardiology{
-  background-image: url('cardiac.jpeg');
+  background-image: url('images/cardiac.jpeg');
 }
 .Anasthesiology{
-  background-image: url('anasthesio.jpeg');
+  background-image: url('images/anasthesio.jpeg');
 }
 .Gynaecology{
-  background-image: url('gynaec.jpeg');
+  background-image: url('images/gynaec.jpeg');
 }
 .Pediactric{
-  background-image: url('pediatric.jpeg')
+  background-image: url('images/pediatric.jpeg')
 }
 #appointment-container{
   display: block;
