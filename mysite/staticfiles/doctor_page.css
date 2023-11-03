@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+:root{
+  --primary: #3a3e3a;
+  --secondary : #73777b;
+  --icons : #ec994b;
+  --text_color : #3a3e3a;
+  --background_color: #f1eee9;
+}
+body{
+  margin: 8px;
+  color: #3a3e59;
+  background-color: var(--background_color);
+}
+table{
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even){
+  background-color: var(--background_color);
+}
+td,th{
+  padding: 16px;
+  
+}
+.doctor-page-buttons button{
+  padding: 12px 16px;
+  margin: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--icons);
+}
+.buttons{
+  padding: 20px;
+  color: var(--background_color);
+}
+button:focus{
+  outline: none;
+  background-color: #fb912f;
+}
+#patient_register_form{
+  display: block;
+  width: 50%;
+  margin: 30px;
+  padding: 14px;
+  border: 2px solid var(--secondary);
+
+}
+input[type=text], input[type=tel], button[type=submit], input[type=file]{
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--secondary);
+  background-color: var(--background_color);
+  border-radius: 8px;
+}
+button[type=submit]{
+  border: none;
+  background-color: var(--icons);
+}
+#file-input{
+  padding: 12px;
+}

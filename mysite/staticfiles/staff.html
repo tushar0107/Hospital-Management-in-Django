@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'staff.css' %}" type="text/css" media="all" />
+    <title>staff</title>
+    
+  </head>
+  <body>
+    
+    <div id="head">
+      <h1>Admin</h1>
+      <a class="logout-button" href="logout">Logout</a>
+    </div>
+    
+    <div id="objects">
+      <a href="staff_admin" onclick="view_patient()">View Patients</a>
+      <a href="javascript:void(0)" onclick="openform()">New Patient Registration</a>
+      <a href="#patient-search">Generate Bill</a>
+      <a href="#">View Doctors</a>
+    </div>
+    
+    <input type="text" name="patient" id="patient-search" placeholder="Search Patients..." />
+    <hr>
+    <div id="patient_register_form">
+      <a href="javascript:void(0)" onclick="closeform()">Close</a>
+        <h2>Register New Patient</h2>
+        <form action="patient_register" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="name">First Name</label>
+            <input type="text" name="fname" id="" required>
+            <br>
+            <label for="name">Last Name</label>
+            <input type="text" name="lname" id="" required>
+            <br>
+            <label for="mobile">Mobile</label>
+            <input type="tel" name="mobile" id="" required>
+            <br>
+            <label for="address">Address</label>
+            <input type="text" name="address" id="" required>
+            <br>
+            <label for="symptoms">Symptoms</label>
+            <input type="text" name="symptoms" id="" required>
+            <br>
+            <label for="disease">Disease</label>
+            <input type="text" name="disease" id="" required>
+            <br>
+            <label for="file">File</label>
+            <input type="file" name="file_upload" id="file-input">
+            <br>
+            <button type="submit">Confirm Patient</button>
+
+            
+        </form>
+    
+    </div> 
+    
+    <div id="patients_view">
+      <table border="1px">
+        <tr>
+          <th>Sr. no.</th>
+          <th>Patient Name</th>
+          <th>Mobile number</th>
+          <th>Admit Date</th>
+        </tr>
+        {% for patient in patients %}
+        <tr>
+          <td>{{patient.id}}</td>
+          <td>{{patient.fname}} {{patient.lname}}</td>
+          <td>{{patient.mobile}}</td>
+          <td>{{patient.admitdate}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    
+    
+    
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    function openform(){
+      document.getElementById('patient_register_form').style.display = "block";
+    }
+    function closeform(){
+      document.getElementById('patient_register_form').style.display = "none";
+
+    }
+    function view_patient(){
+      document.getElementById('patients_view').stytle.display = "block";
+    }
+    
+  </script>
+</html>

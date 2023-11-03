@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% load static %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
 
-    <link rel="stylesheet" href="{% static '/home.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="/mysite/static/home.css" type="text/css" media="all" />
     <title>home</title>
  
   </head>
@@ -28,7 +27,7 @@
     </div>
       
     <div id="hero-img">
-      <img class="hero-l" src="{% static 'images/hero.jpeg' %}" alt="" />
+      <img class="hero-l" src="./images/hero.jpeg" alt="" />
     </div>
       
     <div id="login-form-container">
@@ -79,7 +78,7 @@
     <div id="doctor-cards-container">
       <div class="doctor-card">
         <div class="doctor-img">
-          <img src="{% static 'images/doc1.jpeg' %}" alt="" />
+          <img src="/images/doc1.jpeg" alt="" />
           <p><strong>Dr. XXXXX XXXXXX</strong></p>
           <p>specializations</p>
         </div>
@@ -87,7 +86,7 @@
 
       <div class="doctor-card">
         <div class="doctor-img">
-          <img src="{% static 'images/doc2.jpeg' %}" alt="" />
+          <img src="/images/doc2.jpeg" alt="" />
           <p><strong>Dr. XXXXX XXXXXX</strong></p>
           <p>specializations</p>
         </div>
@@ -95,7 +94,7 @@
       
       <div class="doctor-card">
         <div class="doctor-img">
-          <img src="{% static 'images/doc3.jpeg' %}" alt="" />
+          <img src="images/doc3.jpeg" alt="" />
           <p><strong>Dr. XXXXX XXXXXX</strong></p>
           <p>specializations</p>
         </div>

@@ -1,0 +1,95 @@
+*{
+  box-sizing: border-box;
+}
+:root{
+  --primary: #3a3e3a;
+  --secondary : #73777b;
+  --icons : #ec994b;
+  --text_color : #3a3e3a;
+  --background_color: #f1eee9;
+}
+body{
+  background-color: var(--background_color);
+}
+#head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#head a{
+  margin-right: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+}
+#objects{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+#objects a{
+  width: 20%;
+  padding: 40px 12px;
+  margin: 12px;
+  text-decoration: none;
+  color: black;
+  background-color: #ffb100;
+  border-radius: 8px;
+
+}
+#patient-search{
+  width: 250px;
+  margin: 16px;
+  padding: 8px;
+}
+#patient_register_form{
+  display: none;
+  width: 50%;
+  margin: 30px;
+  padding: 14px;
+  border: 2px solid var(--secondary);
+}
+#patient_register_form a{
+  text-decoration: none;
+  color: var(--secondary);
+  text-align: right;
+}
+input[type=text], input[type=tel], button[type=submit], input[type=file]{
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--secondary);
+  background-color: var(--background_color);
+  border-radius: 8px;
+}
+button[type=submit]{
+  border: none;
+  background-color: var(--icons);
+}
+#file-input{
+  padding: 12px;
+}
+#patients_view{
+  display: block;
+  width: 100%;
+  
+}
+#patients_view table{
+  width: 100%;
+}
+table tr td{
+  padding: 16px;
+  text-align: center;
+}
+
+
+@media screen and (max-width:412px){
+  #objects a{
+    width: 50%;
+  }
+}
