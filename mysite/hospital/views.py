@@ -12,7 +12,7 @@ import requests
 
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def register(request):
     return render(request,'doctor_register.html')
@@ -44,7 +44,7 @@ def doctor_login(request):
             messages.info(request,'Invalid credentials')
             return redirect('home')
     else:
-        return render(request,'home.html')
+        return render(request,'index.html')
 
 def doctor_register(request):
     if request.method == 'POST':
@@ -76,7 +76,7 @@ def doctor_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'home.html')
+        return render(request,'index.html')
 
 
 def staff_register(request):
@@ -110,7 +110,7 @@ def staff_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'home.html')
+        return render(request,'index.html')
 
 
 
@@ -163,7 +163,7 @@ def user_register(request):
             print('account created')
             return redirect('home')
     else:
-        return render(request,'home.html')
+        return render(request,'index.html')
 
 def appointment_booking(request):
     if request.method == 'GET':
@@ -180,4 +180,4 @@ def appointment_booking(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request,'home.html')
+    return render(request,'index.html')
